@@ -1,0 +1,537 @@
+.main {
+  padding: 60px 0;
+}
+.description {
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 0.85rem;
+  width: 100%;
+  z-index: 2;
+  font-family: var(--font-mono);
+}
+.description a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.description p {
+  position: relative;
+  margin: 0;
+  padding: 1rem;
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+}
+.code {
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(25%, auto));
+  gap: 10px 20px;
+  max-width: 100%;
+}
+@media (min-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(25%, auto));
+  }
+}
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, minmax(25%, auto));
+  }
+}
+.flex {
+  display: flex;
+}
+.productCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.productCardContent {
+  display: flex;
+  padding-top: 12px;
+  font-size: 20px;
+  font-weight: 300;
+  justify-content: space-between;
+}
+.productImgWrapper {
+  position: relative;
+  overflow: hidden;
+}
+.productImgWrapper img {
+  width: 100%;
+}
+.addToCard {
+  position: absolute;
+  height: 70px;
+  bottom: -100px;
+  left: 0;
+  width: 100%;
+  background-color: cadetblue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff;
+  padding: 12px;
+  transition: .4s;
+  box-shadow: -1px 1px 12px #000000;
+}
+.addToCard img:hover {
+  border-bottom: 1px solid #fff;
+}
+.productCard.show .addToCard {
+  bottom: 0;
+}
+.addToCard button {
+  text-align: right;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.addToCard button:hover {
+ text-decoration: underline;
+}
+.sidebar {
+  position: fixed;
+  width: 80vw;
+  top: 0;
+  right: -100%;
+  height: 100vh;
+  background-color: cadetblue;
+  padding: 50px 25px 25px 25px;
+  transition: .4s;
+  color: #fff;
+  box-shadow: 0px 0px 15px #000000;
+}
+@media (min-width: 576px) {
+  .sidebar {
+    width: 60vw;
+  }
+}
+@media (min-width: 768px) {
+  .sidebar {
+    width: 30vw;
+  }
+}
+.sidebar.show {
+  right: 0;
+}
+.sidebar .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.sidebar .close img {
+  width: 20px;
+}
+.sidebar .total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 20px;
+}
+.sidebar .btnWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  margin-top: 25px;
+}
+.sidebar .btnWrapper a {
+  border: 1px solid #fff;
+  padding: 10px 25px;
+  width: 120px;
+  text-align: center;
+}
+.sidebar .btnWrapper a:hover {
+  background-color: #fff;
+  color: cadetblue;
+}
+
+
+.itemWrapper {
+  max-height: 75vh;
+  overflow: auto;
+}
+.itemContent {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 1px solid #fff;
+  position: relative;
+  padding-right: 40px;
+}
+.itemContent .name {
+  padding-bottom: 12px;
+}
+.itemContent .price, .itemContent .quantity {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 6px;
+}
+.itemContent .remove {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+  letter-spacing: 4px;
+  color: #fff;
+  position: absolute;
+  width: 13px;
+  right: 2px;
+  bottom: 25px;
+}
+.itemContent .remove img {
+  width: 100%;
+}
+.quantityItem {
+  display: flex;
+}
+.quantityItem span {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  line-height: 1;
+  text-align: center;
+}
+.quantityItem div {
+  padding: 0 12px;
+}
+.quantityItem span:hover {
+  border: 1px solid #fff;
+}
+.wrapperTable {
+  overflow: hidden;
+}
+.wrapperTable > div {
+  overflow: auto;
+}
+@media (min-width: 768px) {
+  .wrapperTable {
+    overflow: visible;
+  }
+}
+.cartTable {
+  width: 100%;
+}
+.cartTable, .cartTable th,  .cartTable td {
+  text-align: left;
+}
+.cartTable th {
+  background-color: cadetblue;
+  color: #fff;
+  padding: 10px;
+}
+.cartTable td {
+  padding: 10px;
+  border: 1px solid cadetblue;
+}
+.cartTable button {
+  width: 25px;
+  cursor: pointer;
+}
+.cartTable button img {
+  width: 100%;
+}
+.cartTable tbody tr td:first-child {
+  text-align: center;
+  position: relative;
+}
+.cartTable tbody tr td:first-child button {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  text-align: center;
+  background-color: cadetblue;
+}
+.cartTable tbody tr td:first-child button img {
+  width: 15px;
+}
+.cartTable thead tr th:last-child, .cartTable tbody tr td:last-child {
+  text-align: right;
+}
+.cartTable tbody tr td .addToCard {
+  position: relative;
+  height: auto;
+  bottom: unset;
+  left: unset;
+  background-color: transparent;
+  box-shadow: none;
+  color: #000;
+}
+.cartTable tbody tr td .addToCard .quantityItem span {
+  cursor: pointer;
+}
+.addToCard button {
+  color: #000;
+  width: auto;
+}
+.totalCartPage {
+  text-align: right;
+  font-size: 26px;
+  font-weight: bold;
+  color: cadetblue;
+  display: flex;
+}
+.totalCartPage div:last-child {
+  padding-left: 14px;
+}
+.totalCartPage div {
+  margin-bottom: 25px;
+}
+.totalCartPage a{
+  font-weight: 100;
+  font-size: 18px;
+  border: 1px solid cadetblue;
+  padding: 8px 20px;
+}
+.oldTotalPrice {
+  color: #c1c4c6;
+  text-decoration: line-through;
+}
+.acceptedCoupon {
+  padding: 0 6px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #000;
+  padding-bottom: 0 !important;
+}
+.coupon button {
+  padding: 10px 20px;
+  background-color: cadetblue;
+  color: #fff;
+  cursor: pointer;
+  border: 1px solid cadetblue;
+  margin-right: 12px;
+}
+.coupon > div {
+  /*padding-bottom: 10px;*/
+  position: relative;
+}
+.coupon > div div:last-child {
+  position: absolute;
+  width: 35px;
+  height: 36px;
+  background-color: cadetblue;
+  border: 1px solid #000;
+  border-left: none;
+  top: 0;
+  right: -35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.coupon > div div:last-child img {
+  width: 50%;
+  height: 50%;
+}
+
+.coupon button:hover {
+  background-color: #fff;
+  color: cadetblue;
+}
+.coupon input {
+  height: 36px;
+  border: 1px solid cadetblue;
+  padding-left: 8px;
+}
+.errorCoupon {
+  padding-top: 8px;
+}
+.totalCouponWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  height: 90px;
+}
+.goToBtn {
+  text-align: right;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row-reverse;
+}
+.goToBtn a {
+  font-weight: bold;
+  color: cadetblue;
+  font-size: 18px;
+  border: 1px solid cadetblue;
+  padding: 8px 20px;
+}
+.form {
+  max-width: 500px;
+  margin: auto;
+}
+.form h1 {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.form input {
+  width: 100%;
+  height: 36px;
+  margin-bottom: 20px;
+  border: 1px solid #000;
+  padding-left: 8px;
+  margin-top: 8px;
+}
+.form .noFull {
+  width: 50%;
+}
+.form .full {
+  width: 100%;
+}
+.error {
+  margin-bottom: 10px;
+  color: red;
+  margin-top: -15px;
+}
+.form .inputWrapper {
+  display: flex;
+}
+.form .submit {
+  font-size: 16px;
+  color: #fff;
+  background-color: cadetblue;
+  cursor: pointer;
+  font-weight: bold;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form .submit:hover {
+  color: cadetblue;
+  background-color: transparent;
+  border: 2px solid cadetblue;
+}
+.success {
+  text-align: center;
+  padding: 20px;
+  background-color: palegreen;
+  margin-bottom: 20px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+}
+
+.container {
+  position: relative;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  max-width: 100%;
+}
+
+.stepper {
+  padding-top: 60px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.stepper a {
+  text-align: center;
+  overflow: hidden;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.stepper a div {
+  position: relative;
+  background-color: #fff;
+}
+.stepper a div:first-child:before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 4000px;
+  background-color: #c0c0c0;
+  top: 50%;
+  left: -1000px;
+  z-index: -1;
+}
+.stepper a div:first-child {
+  display: inline;
+  border: 2px solid #c0c0c0;
+  border-radius: 50%;
+  padding: 5px 10px;
+  color: #c0c0c0;
+  width: 35px;
+}
+.stepper a div:last-child {
+  padding-top: 12px;
+  color: #c0c0c0;
+  font-weight: bold;
+}
+
+.stepper a:hover div:first-child:before, .stepper .active a div:first-child:before {
+  background-color: cadetblue;
+  height: 2px;
+}
+.stepper a:hover div:first-child, .stepper .active a div:first-child  {
+  border: 2px solid cadetblue;
+  color: cadetblue;
+}
+.stepper a:hover div:last-child, .stepper .active a div:last-child {
+  color: cadetblue;
+}
+.openMiniCart {
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 25px;
+  background-color: cadetblue;
+  padding: 14px;
+  position: relative;
+}
+.openMiniCart span {
+  position: absolute;
+  top: -7px;
+  right: -8px;
+  background-color: #000;
+  color: #fff;
+  padding: 3px 7px;
+  border-radius: 50%;
+}
+.hasCouponMiniCart {
+  display: flex;
+  padding-top: 12px;
+}
+.hasCouponMiniCart div {
+  width: 50%;
+}
+.hasCouponMiniCart div:last-child {
+  text-align: right;
+  color: #fff !important;
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding-left: 120px;
+    padding-right: 120px;
+    max-width: 1200px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    padding-left: 120px;
+    padding-right: 120px;
+    max-width: 1400px;
+  }
+}

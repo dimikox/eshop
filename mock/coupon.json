@@ -1,0 +1,22 @@
+[
+    {
+        "name": "HAPPYBIRTHDAY",
+        "discount": "Get a 20% discount off the total price."
+    },
+    {
+        "name": "SUMMER",
+        "discount": "Get a 2€ discount off the total price."
+    },
+    {
+        "name": "ILIKEAPPLES",
+            "discount": "Get a 60% discount on apples."
+    },
+    {
+        "name": "ILIKEPEARS",
+        "discount": "Get a 40% discount on pears."
+    },
+    {
+        "name": "GREEN",
+        "discount": "Get a 30% discount on pears and avocados."
+    }
+]
